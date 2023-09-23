@@ -33,4 +33,17 @@ public class PersonServiceImpl implements PersonService{
 		return personRepository.findByFirstNameStartsWith(name);
 	}
 
+	@Override
+	public String deletePerson(String id) {
+		// TODO Auto-generated method stub
+		personRepository.deleteById(id);
+		return "person with " + id + " deleted;";
+	}
+
+	@Override
+	public List<Person> getByPersonAge(Integer minAge, Integer maxAge) {
+		// TODO Auto-generated method stub
+		return personRepository.findByAgeBetween(minAge, maxAge);
+	}
+
 }

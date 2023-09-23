@@ -3,6 +3,7 @@ package com.springBootMongoDB.resource;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,6 +37,19 @@ public class PersonResource {
 	@GetMapping
 	public List<Person> getPersonStartWith(@RequestParam("name") String name) {
 		return personService.getPersonStartWith(name);
+	}
+	
+	
+	@DeleteMapping("/delete")
+	public String delete(@RequestParam("id") String id) {
+		return personService.deletePerson(id);
+	}
+	
+	
+	@GetMapping("/age")
+	public List<Person> getByPersonAge(@RequestParam Integer minAge, @RequestParam Integer maxAge) {
+		
+		return personService.getByPersonAge(minAge, maxAge);
 	}
 
 }
