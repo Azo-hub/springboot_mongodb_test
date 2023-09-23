@@ -1,5 +1,7 @@
 package com.springBootMongoDB.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,12 @@ public class PersonServiceImpl implements PersonService{
 	public String save(Person person) {
 		// TODO Auto-generated method stub
 		return personRepository.save(person).getPersonId();
+	}
+
+	@Override
+	public List<Person> getPersonStartWith(String name) {
+		// TODO Auto-generated method stub
+		return personRepository.findByFirstNameStartsWith(name);
 	}
 
 }

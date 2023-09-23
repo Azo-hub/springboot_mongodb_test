@@ -1,5 +1,7 @@
 package com.springBootMongoDB.service;
 
+import java.util.List;
+
 import com.springBootMongoDB.domain.Person;
 
 /**
@@ -11,5 +13,7 @@ public interface PersonService {
 
 
 	String save(Person person);
+
+	List<Person> getPersonStartWith(String name);
 
 }
