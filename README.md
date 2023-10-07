@@ -1,2 +1,2 @@
-# springboot_mongodb_test
-This is a springboot app used to test and learn mongo db technology. The app is built into docker image and runned as a docker container.
+# Springboot Mongodb API
+This is a springboot api used to test and learn mongo db technology. The api is built into docker image and runned as a docker container.
